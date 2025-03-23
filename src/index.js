@@ -3,9 +3,16 @@
 import dotenv from "dotenv";
 import connectDb from "./db/index.js";
 
+//second approach, using a db file for all db operations
+
+
 dotenv.config({
   path: "./env",
 });
+import { Dbname } from "./constants.js";
+
+console.log("MONGODB_URI:", process.env.MONGODB_URI);
+console.log("Dbname:", Dbname);
 
 connectDb();
 
@@ -32,7 +39,5 @@ const app = express();
     console.error("error :" , error)
   }
 })()
-
 */
 
-//second approach, using a db file for all db operations
